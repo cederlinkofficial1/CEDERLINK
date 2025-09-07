@@ -12,9 +12,9 @@ const About = () => (
       />
     </div>
 
-    {/* <div className="cederlink-logo">
-      <img src = ""></img>
-    </div> */}
+    <div className="cederlink-logo">
+      <img src = "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/cederlink_logo.png"></img>
+    </div>
   </div>
 );
 

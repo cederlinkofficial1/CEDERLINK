@@ -14,38 +14,49 @@ body, html {
 /* Banner styles */
 .banner-container {
   width: 100%;
+  height: 100vh; /* Fixed height using viewport height */
   overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100vh; /* Ensures it won't exceed viewport height */
 }
 
 .responsive-banner {
   width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover ensures the image fills the container without distortion */
+  object-position: center; /* Keeps the image centered */
+  display: block;
+}
+
+/* Logo styles */
+.cederlink-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 65%; /* Increased from 50% to 65% */
+  max-width: 500px; /* Increased from 400px to 500px */
+}
+
+.cederlink-logo img {
+  width: 100%;
   height: auto;
-  object-fit: contain;
   display: block;
 }
 
 /* Media queries for different screen sizes */
 @media screen and (max-width: 768px) {
-  .banner-container {
-    max-height: 40vh;
-  }
-  
-  .responsive-banner {
-    object-fit: cover;
+  .cederlink-logo {
+    width: 75%; /* Increased from 60% to 75% */
   }
 }
 
 @media screen and (max-width: 480px) {
-  .banner-container {
-    max-height: 30vh;
-  }
-  
-  .responsive-banner {
-    object-fit: cover;
+  .cederlink-logo {
+    width: 85%; /* Increased from 70% to 85% */
   }
 }
+
