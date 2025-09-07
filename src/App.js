@@ -6,11 +6,15 @@ const About = () => (
   <div>
     <div className="banner-container">
       <img 
-        src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/banner.png" 
+        src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/CederLink.webp" 
         alt="CederLink Banner" 
         className="responsive-banner"
       />
     </div>
+
+    {/* <div className="cederlink-logo">
+      <img src = ""></img>
+    </div> */}
   </div>
 );
 
