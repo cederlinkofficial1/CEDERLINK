@@ -1,14 +1,14 @@
-/* Reset default margins and padding */
+/* Apply Roboto font throughout the website */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-body, html {
-  width: 100%;
-  height: 100%;
-  overflow-x: hidden;
+body {
+  font-family: 'Roboto', sans-serif;
+  font-optical-sizing: auto;
 }
 
 /* Banner styles */
@@ -20,6 +20,7 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2; /* Higher than beams-container */
 }
 
 .responsive-banner {
@@ -59,4 +60,198 @@ body, html {
     width: 85%; /* Increased from 70% to 85% */
   }
 }
+
+/* Header layout */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  height: 70px;
+  position: relative;
+}
+
+.header-logo {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 100%;
+  width: auto;
+}
+
+.header-title {
+  margin: 0 auto;
+  color: #35444f;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.header-nav > ul{
+  display: flex;
+  list-style-type: none;
+}
+.header-nav > ul > li{
+    padding: 8px;
+    margin: 10px; 
+}
+
+/* Banner header elements */
+.banner-header-logo {
+  position: absolute;
+  top: 18px; /* Adjusted from 15px to move it slightly upward */
+  left: 20px;
+  height: 40px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+}
+
+.banner-header-logo img {
+  height: 100%;
+  width: auto;
+  display: block;
+}
+
+.banner-header-title {
+  position: absolute;
+  top: 22px; /* Keeping this the same */
+  left: 70px; /* Positioned to the right of the logo */
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+}
+
+.banner-nav {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+  border-radius: 25px; /* Increased from 8px to 25px for more curve */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Subtle shadow for floating effect */
+  padding: 6px 15px; /* Slightly increased padding to match the curved design */
+  backdrop-filter: blur(5px); /* Adds a modern frosted glass effect */
+}
+
+.banner-nav > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.banner-nav > ul > li {
+  cursor: pointer !important;
+  padding: 8px 15px !important;
+  margin: 0 2px !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  border-radius: 18px !important; /* Increased from 4px to 18px */
+  transition: all 0.2s ease !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+}
+
+.banner-nav > ul > li:hover {
+  background-color: #cccccc !important; /* Darker grey for better visibility */
+  color: #000000 !important;
+  cursor: pointer !important;
+}
+
+/* You can remove or comment out the existing .header styles since we're not using them anymore */
+
+.beams-container {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Ensure visibility of all UI elements */
+.banner-header-logo,
+.banner-header-title,
+.banner-nav,
+.cederlink-logo {
+  margin-top: 30px;
+  z-index: 10;
+  position: absolute;
+  margin-right: 22px;
+  
+}
+
+/* Make text more visible against background */
+.banner-header-title,
+.banner-nav > ul > li {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Override the conflicting styles at the bottom of your CSS */
+/* Remove or modify this conflicting rule */
+.banner-header-title {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Override the nav items text color and shadow */
+.banner-nav > ul > li {
+  color: #000000 !important; /* Force black color with !important */
+  text-shadow: none !important; /* Remove text shadow */
+}
+
+/* Reset any conflicting styles first */
+.banner-nav ul li {
+  cursor: default;
+  background-color: transparent;
+}
+
+/* Apply strongly enforced styles */
+.banner-nav > ul > li {
+  cursor: pointer !important;
+  padding: 8px 15px !important;
+  margin: 0 2px !important;
+  color: #000000 !important;
+  font-weight: bold !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+}
+
+/* Strong hover effect with !important */
+.banner-nav > ul > li:hover {
+  background-color: #cccccc !important; /* Darker grey for better visibility */
+  color: #000000 !important;
+  cursor: pointer !important;
+}
+
+/* Additional rule to ensure pointer cursor */
+.banner-nav > ul > li {
+  cursor: pointer !important;
+}
+
+/* Override any inline styles if present */
+[style*="cursor"] .banner-nav > ul > li {
+  cursor: pointer !important;
+}
+
 
