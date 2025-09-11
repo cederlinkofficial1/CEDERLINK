@@ -73,11 +73,11 @@ const Body = () => {
         {/* Mobile menu slide-in panel */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul>
-            <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
-            <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
-            <li><Link to="/blogs" onClick={toggleMenu}>Blogs</Link></li>
-            <li><Link to="/articles" onClick={toggleMenu}>Articles</Link></li>
             <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
+            <li><Link to="/articles" onClick={toggleMenu}>Articles</Link></li>
+            <li><Link to="/blogs" onClick={toggleMenu}>Blogs</Link></li>
+            <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
+            <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
           </ul>
         </div>
       </div>
