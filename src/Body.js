@@ -62,14 +62,6 @@ const Body = () => {
         </div>
         
         {/* Hamburger menu for mobile */}
-        <div className="hamburger-menu" onClick={toggleMenu}>
-          <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
-            <span></span> 
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        
         {/* Mobile menu slide-in panel */}
         <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
           <ul>
@@ -79,6 +71,13 @@ const Body = () => {
             <li><Link to="/contact" onClick={toggleMenu}>Contact Us</Link></li>
             <li><Link to="/about" onClick={toggleMenu}>About Us</Link></li>
           </ul>
+        </div>
+        <div className="hamburger-menu" onClick={toggleMenu}>
+          <div className={`hamburger-icon ${isMenuOpen ? 'open' : ''}`}>
+            <span></span> 
+            <span></span>
+            <span></span>
+          </div>
         </div>
       </div>
     </div>
