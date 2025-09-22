@@ -1,0 +1,25 @@
+.columns-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    z-index: 0; /* Above background but below other content */
+    pointer-events: none; /* Allow clicking through to elements below */
+}
+
+.column {
+    width: 64px;
+    height: 100vh;
+    opacity: 0.2; /* 20% fill opacity */
+    background: linear-gradient(
+        to bottom,
+        rgba(217, 217, 217, 0.05) 0%,
+        rgba(0, 0, 0, 0.8) 32%,
+        rgba(115, 115, 115, 0.05) 100%
+    );
+    mix-blend-mode: overlay;
+    backdrop-filter: blur(100%); /* Adjusted blur to match your screenshot */
+    -webkit-backdrop-filter: blur(100%);
+}

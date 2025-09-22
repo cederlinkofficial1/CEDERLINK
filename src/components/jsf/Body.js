@@ -1,7 +1,9 @@
+import React from "react";
+
 const Body = () => {
     return(
         <div className="background-container">
-            {/* Content can go here */}
+            {/* Background image is applied via CSS */}
         </div>
     );
 };

@@ -8,22 +8,27 @@ body, html {
     height: 100%;
     width: 100%;
     overflow: hidden; /* Disable scrolling */
+    background-color: #2b85c7; /* Backup color that matches the blue */
 }
 
 .background-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/blueBKG.jpg');
+    top: -50px; /* Significantly extend beyond viewport edges */
+    left: -50px;
+    width: calc(100% + 100px); /* Make much wider than viewport */
+    height: calc(100vh + 100px); /* Make much taller than viewport */
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/blueBKG.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1; /* Place background behind other content */
+    filter: blur(20px); /* Apply blur directly to the background */
+    -webkit-filter: blur(45px);
 }
 
 .app {
     height: 100vh;
     width: 100%;
+    position: relative;
+    z-index: 1; /* Ensure app content is above blurred background */
 }
