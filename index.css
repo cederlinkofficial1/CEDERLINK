@@ -8,7 +8,7 @@ body, html {
     height: 100%;
     width: 100%;
     overflow: hidden; /* Disable scrolling */
-    background-color: #2b85c7; /* Backup color that matches the blue */
+    /*background-color: #2b85c7;*/ /* Backup color that matches the blue */
 }
 
 .background-container {
@@ -22,8 +22,8 @@ body, html {
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1; /* Place background behind other content */
-    filter: blur(20px); /* Apply blur directly to the background */
-    -webkit-filter: blur(45px);
+    /*filter: blur(20px); /* Apply blur directly to the background */
+    /*-webkit-filter: blur(45px);*/
 }
 
 .app {
