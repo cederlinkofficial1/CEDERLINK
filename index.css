@@ -7,23 +7,36 @@
 body, html {
     height: 100%;
     width: 100%;
-    overflow: hidden; /* Disable scrolling */
-    /*background-color: #2b85c7;*/ /* Backup color that matches the blue */
+    overflow-y: auto; /* Enable vertical scrolling */
+    scroll-behavior: smooth; /* Add smooth scrolling */
 }
 
 .background-container {
-    position: fixed;
-    top: -50px; /* Significantly extend beyond viewport edges */
-    left: -50px;
-    width: calc(100% + 100px); /* Make much wider than viewport */
-    height: calc(100vh + 100px); /* Make much taller than viewport */
-    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/blueBKG.jpg');
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    transition: transform 0.5s ease-out; /* Add smooth transition for sliding effect */
+}
+
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: -1; /* Place background behind other content */
-    /*filter: blur(20px); /* Apply blur directly to the background */
-    /*-webkit-filter: blur(45px);*/
+}
+
+/* Make background slide up when scrolling */
+.background-scrolled {
+    transform: translateY(-100vh);
 }
 
 .app {
@@ -32,3 +45,309 @@ body, html {
     position: relative;
     z-index: 1; /* Ensure app content is above blurred background */
 }
+
+/* Logo positioning and sizing */
+.background-container img.logo-banner {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+    z-index: 2; /* Ensure logo is above background and columns */
+}
+
+/* Navigation styling */
+.nav-items {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    background-color: rgba(36, 36, 36, 1);
+    padding: 10px 15px;
+    border-radius: 30px;
+    z-index: 10;
+}
+
+.nav-items ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 10px;
+}
+
+.nav-items li {
+    display: flex;
+}
+
+/* White elliptical outline for all nav items */
+.nav-items a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 8px 23px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    border: 2px solid white; /* White border */
+    background-color: transparent; /* Transparent background */
+    transition: all 0.3s ease;
+}
+
+/* Change "Contact" to have white background */
+.nav-items a[href="/contact"] {
+    background-color: white;
+    color: black;
+}
+
+/* Add subtle hover effect */
+.nav-items a:hover:not([href="/contact"]) {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Active page indicator - for all items EXCEPT Contact */
+.nav-items a.active:not([href="/contact"])::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    margin-right: 8px;
+}
+
+/* Update the background container styling */
+.background-container {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    transition: transform 0.5s ease-out; /* Add smooth transition for sliding effect */
+}
+
+/* Add this to create a properly sized background */
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Make background slide up when scrolling */
+.background-scrolled {
+    transform: translateY(-100vh);
+}
+
+/* Make sure dark theme also respects the new structure */
+.background-container.dark-theme::before {
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okokdarkTheme.jpg');
+}
+
+/* Add a container for the quote and border shown in screenshot */
+.quote-frame {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 10px;
+    border: 2px solid #000;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+}
+
+.quote-frame h3 {
+    color: #000;
+    font-family: serif;
+    margin: 0;
+}
+
+/* Light theme background (default) */
+.background-container.light-theme {
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg');
+}
+
+/* Dark theme background */
+.background-container.dark-theme {
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okokdarkTheme.jpg');
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: rgba(36, 36, 36, 0.8);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle.dark {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+/* Dark theme styles - add these at the end of your CSS */
+
+/* When dark theme is active, change navigation bar */
+body.dark-theme .nav-items {
+    background-color: rgba(255, 255, 255, 1); /* White background */
+}
+
+/* Change link colors and borders in dark theme */
+body.dark-theme .nav-items a {
+    color: #242424;
+    border: 2px solid #242424;
+}
+
+/* Invert Contact button colors in dark theme */
+body.dark-theme .nav-items a[href="/contact"] {
+    background-color: #242424;
+    color: white;
+}
+
+/* Change hover effect in dark theme */
+body.dark-theme .nav-items a:hover:not([href="/contact"]) {
+    background-color: rgba(36, 36, 36, 0.2);
+}
+
+/* Change active indicator dot in dark theme */
+body.dark-theme .nav-items a.active:not([href="/contact"])::before {
+    background-color: #242424;
+}
+
+/* Light theme logo (default - no change needed) */
+
+/* Dark theme logo */
+body.dark-theme .background-container img.logo-banner {
+    content: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okokDarkTheme.png');
+}
+
+.home-container {
+    padding-top: 100vh; /* Start content below the full viewport */
+}
+
+.quote-container {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    margin: 0 auto;
+    max-width: 800px;
+    border-radius: 10px;
+    color: white;
+}
+
+.quote-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.quote-container p {
+    font-size: 24px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* Dark mode version */
+body.dark-theme .quote-container {
+    background-color: rgba(36, 36, 36, 0.1);
+}
+
+/* First page styling - full viewport height */
+.home-content {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+}
+
+/* Quote section styling - positioned below first page */
+.quote-section {
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: #1E1E1E; /* Match the dark header */
+}
+
+/* Second page content styling */
+.second-page {
+    min-height: 100vh;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    margin-top: 0;
+    background-color: #8ab9d2;
+}
+
+/* Mountain silhouette */
+.mountains {
+    width: 100%;
+    height: 80px;
+    background-repeat: repeat-x;
+    background-size: contain;
+    position: relative;
+    z-index: 5;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: block;
+    background-color: #242424; /* Add dark background color to match header */
+}
+
+/* Fix the quote content area */
+.quote-content {
+    background-color: #ffffff; /* Change to dark instead of white */
+    padding: 40px 20px;
+    width: 100%;
+    min-height: 200px;
+    margin-top: 0;
+    position: relative;
+    color: white; /* Ensure text is visible on dark background */
+}
+
+/* Update quote text for dark background */
+.quote-text {
+    font-size: 32px;
+    color: rgb(188, 22, 22); /* Change from blue to white for dark background */
+    max-width: 600px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+/* Dark theme support */
+body.dark-theme .quote-content {
+    background-color: #242424;
+}
+
+body.dark-theme .quote-text {
+    color: white;
+}
+
+
