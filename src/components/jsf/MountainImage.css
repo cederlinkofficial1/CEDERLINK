@@ -1,0 +1,28 @@
+.mountain-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.mountain-image-container img {
+  max-width: 100%;
+  max-height: 300px;
+  object-fit: contain;
+  object-position: right center;
+}
+
+.image-error {
+  padding: 20px;
+  background-color: #f8f8f8;
+  color: #666;
+  text-align: center;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .mountain-image-container {
+    justify-content: center;
+    margin-top: 20px;
+  }
+}

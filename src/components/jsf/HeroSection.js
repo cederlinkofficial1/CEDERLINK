@@ -1,17 +1,15 @@
 import React from "react";
 import "./HeroSection.css";
 
-const HeroSection = () => {
+const HeroSection = ({ isDarkTheme }) => {
+  const heroStyle = {
+    backgroundImage: isDarkTheme 
+      ? `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okokdarkTheme.jpg')`
+      : `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg')`
+  };
+
   return (
-    <div className="hero-section">
-      {/* Logo */}
-      <div className="logo">
-        <img 
-          src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/logo_banner.png" 
-          alt="CederLink Logo"
-        />
-      </div>
-      
+    <div className="hero-section" style={heroStyle}>   
       <div className="hero-content">
         <h1 className="hero-tagline">
           Enterprise built on 

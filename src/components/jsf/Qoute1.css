@@ -1,20 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 .quote1-container {
     display: flex;
     align-items: flex-start;
-    justify-content: flex-start; /* Changed from space-between to flex-start */
-    padding: 40px 0;
-    max-width: 1200px;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    padding-top: 60px; /* Changed from 60px to 0px to remove top space */
+    max-width: 5000px;
     margin: 0 auto;
     background-color: white;
-    overflow: hidden; /* Prevent scrolling */
     margin-left: 0%;
     margin-right: 0%;
+}
+
+.quote1-container.dark-theme {
+    background-color: #242424;
 }
 
 .quote1-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 30px;
     width: 100%;
+}
+
+.quote-text-section {
+    flex: 1;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 0; /* Align to left border */
+    padding-left: 25px; /* Add padding to account for the vertical line */
+    align-items: flex-start; /* Align content to the start */
+    position: relative; /* Needed for absolute positioning of the line */
+    border-left: 30px; /* Ensure no border pushing content */
+    size: border-box; /* Include padding and border in element's total width and height */
+}
+
+.quote-text-section::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px; /* Width of the vertical box/line */
+    background-color: white;
+}
+
+.quote1-container.dark-theme .quote-text-section::before {
+    background-color: #242424; /* Dark gray color requested */
 }
 
 .quote1-text-container {
@@ -25,14 +61,32 @@
 }
 
 .quote1-text {
-    font-size: 2.5rem;
-    font-weight: 200;
-    line-height: 1.3;
+    /* Typography settings */
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    font-style: regular;
+    line-height: 122%;
+    letter-spacing: 0;
+    vertical-align: middle;
+    margin: 20px;
+    
+    /* Layout settings */
+    width: 1100px; /* Increased from 900px to 1000px */
+    height: 80px;
+    top: -50px;
+    left: 19px;
+    position: relative;
+    
+    /* Keep existing styles that don't conflict */
     color: #333;
-    margin: 0;
+    margin: 8px;
     padding: 0;
     text-align: left;
-    max-width: 600px; /* Control the width of the quote text */
+}
+
+.quote1-container.dark-theme .quote1-text {
+    color: #f5f5f5; /* Light text color for dark background */
 }
 
 .mountain-image {
@@ -41,14 +95,15 @@
     display: flex;
     justify-content: flex-end; /* Push image to the right */
     margin-right: 0%;
+    width: 100%;
 }
 
 .mountain-image img {
-    width: 100%;
     max-height: 300px; /* Increased height */
     object-fit: contain; /* Preserve aspect ratio */
     object-position: right center; /* Align to right */
     margin-right: 0%;
+    max-width: 700px;
 
 }
 
@@ -56,14 +111,15 @@
     .quote1-container {
         flex-direction: column;
         text-align: left;
-        padding-left: 0;
+        padding: 40px 20px;
     }
     
     .quote1-content {
         flex-direction: column;
-        align-items: flex-start;
+    }
+    
+    .quote-text-section {
         max-width: 100%;
-        padding: 0 20px;
     }
     
     .quote1-text-container {

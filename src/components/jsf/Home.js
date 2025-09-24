@@ -1,7 +1,6 @@
 import React from "react";
+import { useOutletContext } from "react-router-dom";
 import Qoute1 from "./Qoute1";
-import Qoute2 from "./Qoute2";
-import Qoute3 from "./Qoute3";
 import HeroSection from "./HeroSection";
 import About from "./About";
 import Newsroom from "./Newsroom";
@@ -9,10 +8,14 @@ import Projects from "./Projects";
 
 
 const Home = () => {
+    const [isDarkTheme, toggleTheme] = useOutletContext();
+    
     return(
         <>
             {/* Hero section (first page) */}
-            <HeroSection />
+            <section id="home">
+                <HeroSection isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+            </section>
             
             {/* First quote section */}
             <Qoute1 />
@@ -22,7 +25,6 @@ const Home = () => {
                 <Newsroom />
             </section>
 
-            {/* Second quote section */}            
             {/* Newsroom section */}
             <section className="home-projects-section">
                 <Projects />

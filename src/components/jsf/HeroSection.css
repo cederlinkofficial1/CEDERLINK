@@ -3,7 +3,7 @@
 .hero-section {
   height: 100vh;
   width: 100%;
-  background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg');
+  /* Background image set dynamically */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -13,16 +13,34 @@
   justify-content: flex-start;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 40px;
+  z-index: 1000;
+  background-color: transparent;
+}
+
 .logo {
-  position: absolute;
-  top: 32px;
-  left: 40px;
-  z-index: 3;
+  position: static; /* Change from absolute to static */
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-  height: 60px; /* Adjust size as needed */
+  height: 55px;
   width: auto;
+  margin-top: 16px;
+}
+
+nav, .nav-items {
+  display: flex;
+  align-items: center;
 }
 
 .hero-section::before {
@@ -39,24 +57,44 @@
   position: relative;
   z-index: 2;
   padding-left: 50px;
-  max-width: 600px;
+  max-width: 2000px;
 }
 
 .hero-tagline {
   font-family: 'Instrument Sans', sans-serif;
-  font-size: 4.5rem;
-  font-weight: 600;
-  color: #fff;
+  font-size: 9.5rem;
+  font-weight: 400;
+  color: #242424; /* Default color for light theme */
   margin: 0;
   line-height: 1.2;
 }
 
+.hero-tagline br {
+  margin-bottom: 15px; /* Add space after the line break */
+  display: block;
+  content: ""; /* Required for margin to work on br element */
+}
+
 .alpine-highlight {
-  background-color: white;
-  color: #333;
-  border-radius: 40px;
-  padding: 5px 20px;
+  background-color: white; /* Default background for light theme */
+  color: #333; /* Default text color for light theme */
+  border-radius: 140px;
+  padding: 1px 28px;
   display: inline-block;
+  padding-bottom: 32px;
+  height: 200px;
+  width: 512px;
+  margin-top: 20px;
+}
+
+/* Dark theme styles */
+body.dark-theme .hero-tagline {
+  color: white; /* White text in dark theme */
+}
+
+body.dark-theme .alpine-highlight {
+  background-color: #242424; /* Black background in dark theme */
+  color: white; /* White text in dark theme */
 }
 
 @media (max-width: 768px) {
@@ -76,6 +114,14 @@
   .logo img {
     height: 30px; /* Smaller logo on mobile */
   }
+  
+  header {
+    padding: 15px 20px;
+  }
+}
+
+.contact{
+  background-color: tomato;
 }
 
 /* Remove any grey background */
@@ -89,3 +135,10 @@ body, html {
 #root, .app {
   background-color: transparent;
 }
+
+/* .theme-toggle-inline .theme-toggle-icon-light,
+.theme-toggle-inline .theme-toggle-icon-dark {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+} */

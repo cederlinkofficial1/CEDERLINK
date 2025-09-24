@@ -2,22 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "./Body.css";
 
-const Body = () => {
+const Body = ({ isDarkTheme, toggleTheme }) => {
     const location = useLocation();
-    const [isDarkTheme, setIsDarkTheme] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    
-    // Toggle theme function
-    const toggleTheme = () => {
-        const newTheme = !isDarkTheme;
-        setIsDarkTheme(newTheme);
-        
-        if (newTheme) {
-            document.body.classList.add('dark-theme');
-        } else {
-            document.body.classList.remove('dark-theme');
-        }
-    };
     
     // Handle scroll to slide background
     useEffect(() => {
@@ -36,6 +23,17 @@ const Body = () => {
     
     return(
         <header>
+            {/* Logo that changes with theme */}
+            <div className="logo">
+                <img 
+                    src={isDarkTheme 
+                        ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/logo_banner_darktheme.png"
+                        : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/logo_banner.png"
+                    }
+                    alt="CederLink Logo"
+                />
+            </div>
+            
             <nav>
                 <div className="nav-items">
                     <Link to="/" className={`nav-item ${location.pathname === "/" ? "active" : ""}`}>Home</Link>
@@ -47,10 +45,22 @@ const Body = () => {
             </nav>
             
             <button 
-                className={`theme-toggle ${isDarkTheme ? 'dark' : 'light'}`}
+                className="theme-toggle"
                 onClick={toggleTheme}
             >
-                {isDarkTheme ? '☀️' : '🌙'}
+                {isDarkTheme ? (
+                    <img 
+                        src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/lightthemeButton.png"
+                        alt="Light Mode"
+                        className="theme-toggle-icon-light"
+                    />
+                ) : (
+                    <img 
+                        src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/darkthemeButton.png"
+                        alt="Dark Mode"
+                        className="theme-toggle-icon-dark"
+                    />
+                )}
             </button>
         </header>
     );

@@ -1,22 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Qoute1.css";
+import MountainImage from "./MountainImage";
+import { useOutletContext } from "react-router-dom";
 
 const Qoute1 = () => {
-    const [imageError, setImageError] = useState(false);
+    // Get the theme state from outlet context
+    const [isDarkTheme] = useOutletContext();
     
     return(
-        <div className="quote1-container">
+        <div className={`quote1-container ${isDarkTheme ? 'dark-theme' : ''}`}>
             <div className="quote1-content">
-                <h2 className="quote1-text">
-                    The resolve of the summit is not debated by the tempest, only witnessed by the ages
-                </h2>
-                <div className="mountain-image">
-                    <img
-                        src="https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/BlueFractalMount.png" 
-                        alt="Blue mountain fractal" 
-                        onError={() => setImageError(true)}
-                    />
+                <div className="quote-text-section">
+                    <h2 className="quote1-text">
+                        The resolve of the summit is not debated
+                        by the tempest, only witnessed by ages the
+                        ages
+                    </h2>
                 </div>
+                <MountainImage isDarkTheme={isDarkTheme} />
             </div>
         </div>
     );

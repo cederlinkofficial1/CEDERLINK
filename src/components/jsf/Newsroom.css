@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+.newsroom {
+    height: 100vh; /* Full viewport height */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsroom-image {
+    height: 50vh; /* Exactly half the viewport height */
+    overflow: hidden;
+    position: relative;
+}
+
+.newsroom-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Overlay for the sections */
+.image-sections {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex; /* Changed from grid to flex */
+    flex-direction: row; /* Ensure horizontal layout */
+    z-index: 2;
+}
+
+/* Section styling */
+.section {
+    flex: 1; /* Make each section take equal width */
+    height: 100%; /* Ensure full height */
+    border-right: 3px solid rgb(255, 255, 255);
+}
+
+/* Remove border from last section */
+.section:last-child {
+    border-right: none;
+}
+
+.newsroom-content {
+    height: 50vh; /* The other half of the page */
+    padding: 20px;
+    position: relative; /* Needed for absolute positioning of the line */
+}
+
+/* Horizontal divider line */
+.newsroom-content::before {
+    content: "";
+    position: absolute;
+    top: 220px; /* Position at the top of the content section */
+    left: 50px; /* Gap from the left */
+    right: 50px; /* Gap from the right */
+    height: 3px; /* Line thickness */
+    background-color: rgb(0, 0, 0); /* White line */
+    border-radius: 1.5px; /* Slightly rounded edges */
+}
+
+/* Add these styles to position text below the horizontal line */
+.newsroom-text-container {
+    position: relative;
+    top: 240px; /* Position below the line at 220px + spacing */
+    padding: 0 50px; /* Match the horizontal line's spacing */
+}
+
+.newsroom-title {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-top: 35px;
+    color: #000000;
+    text-align: middle;
+}
+
+
+/* Adjust for mobile */
+@media (max-width: 768px) {
+    .newsroom-image {
+        height: 40vh; /* Slightly smaller on mobile */
+    }
+    
+    .newsroom-content {
+        height: 60vh;
+    }
+
+    .newsroom-content::before {
+        left: 20px;
+        right: 20px;
+    }
+
+    .newsroom-text-container {
+        padding: 0 20px; /* Match the horizontal line's spacing on mobile */
+    }
+    
+    .newsroom-title {
+        font-size: 2rem;
+    }
+    
+    .newsroom-description {
+        font-size: 1rem;
+    }
+}
+
+/* Add dark theme styling */
+.newsroom.dark-theme {
+    background-color: #121212;
+}
+
+.newsroom.dark-theme .newsroom-content::before {
+    background-color: white; /* Change horizontal line to white in dark theme */
+}
+
+.newsroom.dark-theme .newsroom-title {
+    color: white; /* Change text color to white in dark theme */
+}
+
+.newsroom.dark-theme .section {
+    border-right: 3px solid #242424; /* Adjust border opacity for dark theme */
+}

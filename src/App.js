@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDom from "react-dom/client";
 import Body from "./components/jsf/Body";
 import Home from "./components/jsf/Home";
@@ -10,10 +10,26 @@ import Error from "./Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 
 const AppLayout = () => {
+    // Move theme state up to AppLayout
+    const [isDarkTheme, setIsDarkTheme] = useState(false);
+    
+    // Create toggle function here
+    const toggleTheme = () => {
+        setIsDarkTheme(prevTheme => {
+            const newTheme = !prevTheme;
+            if (newTheme) {
+                document.body.classList.add('dark-theme');
+            } else {
+                document.body.classList.remove('dark-theme');
+            }
+            return newTheme;
+        });
+    };
+
     return(
         <div className="app">
-            <Body />
-            <Outlet />
+            <Body isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+            <Outlet context={[isDarkTheme, toggleTheme]} />
         </div>
     );
 };
@@ -25,7 +41,7 @@ const appRouter = createBrowserRouter([
         children : [
             {
                 path : "/",
-                element : <Home/>,
+                element : <Home />,  // Remove props here
             },
             {
                 path : "/about",
