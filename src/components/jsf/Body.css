@@ -1,0 +1,63 @@
+/* Section positioning styles */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Fixed height sections */
+section {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  scroll-margin-top: 70px; /* Adjusts scroll position to account for fixed navbar */
+}
+
+/* Sticky navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px 0;
+  transition: all 0.3s ease;
+}
+
+/* Make nav items fixed width for consistency */
+.nav-items {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.nav-item {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Hero section positioning */
+#home {
+  z-index: 1;
+}
+
+/* Other sections positioning */
+#about, #newsroom, #projects, #contact {
+  z-index: 2;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Quote sections */
+.quote-section {
+  padding: 50px 0;
+  position: relative;
+  z-index: 2;
+}

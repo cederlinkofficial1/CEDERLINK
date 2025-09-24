@@ -1,14 +1,14 @@
 import React from "react";
 
-const Qoute = () => {
+const Qoute3 = () => {
     return(
         <div className="quote-section">
             <span className="quote-label"></span>
             <div className="quote-content">
-                <h2 className="quote-text"> Qoute section</h2>
+                <h2 className="quote3-text"> Qoute section3</h2>
             </div>
         </div>
     );
 };
 
-export default Qoute;
+export default Qoute3;

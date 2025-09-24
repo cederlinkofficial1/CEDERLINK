@@ -1,22 +1,37 @@
 import React from "react";
-import Qoute from "./Qoute";
+import Qoute1 from "./Qoute1";
+import Qoute2 from "./Qoute2";
+import Qoute3 from "./Qoute3";
+import HeroSection from "./HeroSection";
+import About from "./About";
+import Newsroom from "./Newsroom";
+import Projects from "./Projects";
+
 
 const Home = () => {
     return(
         <>
-            {/* First page - full viewport height */}
-            {/* <div className="home-content"> */}
-                {/* First page content */}
-            {/* </div> */}
+            {/* Hero section (first page) */}
+            <HeroSection />
             
-            {/* Quote section - connected directly to first page */}
-            <Qoute />
+            {/* First quote section */}
+            <Qoute1 />
             
-            {/* Second page content */}
-            <div className="second-page">
-                <h2>Second page content</h2>
-                <p>This is where additional content for the second page would go.</p>
-            </div>
+            {/* About Us section */}
+            <section className="home-about-section">
+                <Newsroom />
+            </section>
+
+            {/* Second quote section */}            
+            {/* Newsroom section */}
+            <section className="home-projects-section">
+                <Projects />
+            </section>
+            
+            {/* Third quote section */}
+            <section className="home-about-section">
+                <About />
+            </section>
         </>
     );
 };

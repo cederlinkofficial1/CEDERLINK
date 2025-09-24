@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+.hero-section {
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/okok.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  z-index: 3;
+}
+
+.logo img {
+  height: 60px; /* Adjust size as needed */
+  width: auto;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-left: 50px;
+  max-width: 600px;
+}
+
+.hero-tagline {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.alpine-highlight {
+  background-color: white;
+  color: #333;
+  border-radius: 40px;
+  padding: 5px 20px;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding-left: 30px;
+  }
+  
+  .hero-tagline {
+    font-size: 3rem;
+  }
+  
+  .logo {
+    top: 15px;
+    left: 20px;
+  }
+  
+  .logo img {
+    height: 30px; /* Smaller logo on mobile */
+  }
+}
+
+/* Remove any grey background */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+/* Make sure there's no default grey background on the container */
+#root, .app {
+  background-color: transparent;
+}

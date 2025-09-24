@@ -1,0 +1,81 @@
+.quote1-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Changed from space-between to flex-start */
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    overflow: hidden; /* Prevent scrolling */
+    margin-left: 0%;
+    margin-right: 0%;
+}
+
+.quote1-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.quote1-text-container {
+    flex: 1;
+    padding-right: 30px;
+    padding-left: 0;
+    margin-left: 0; /* Ensure no left margin */
+}
+
+.quote1-text {
+    font-size: 2.5rem;
+    font-weight: 200;
+    line-height: 1.3;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    max-width: 600px; /* Control the width of the quote text */
+}
+
+.mountain-image {
+    margin-left: 20px; /* Space between text and image */
+    flex: 1; /* Allow the image to take remaining space */
+    display: flex;
+    justify-content: flex-end; /* Push image to the right */
+    margin-right: 0%;
+}
+
+.mountain-image img {
+    width: 100%;
+    max-height: 300px; /* Increased height */
+    object-fit: contain; /* Preserve aspect ratio */
+    object-position: right center; /* Align to right */
+    margin-right: 0%;
+
+}
+
+@media (max-width: 768px) {
+    .quote1-container {
+        flex-direction: column;
+        text-align: left;
+        padding-left: 0;
+    }
+    
+    .quote1-content {
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .quote1-text-container {
+        padding-right: 0;
+        padding-bottom: 30px;
+        width: 100%;
+    }
+    
+    .quote1-image {
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 20px;
+        width: 100%;
+    }
+}

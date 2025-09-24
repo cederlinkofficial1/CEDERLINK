@@ -58,7 +58,6 @@
     "node-releases": "^2.0.20",
     "nullthrows": "^1.1.1",
     "ordered-binary": "^1.6.0",
-    "parcel": "^2.16.0",
     "path-key": "^3.1.1",
     "picocolors": "^1.1.1",
     "picomatch": "^2.3.1",
@@ -70,7 +69,7 @@
     "react-reconciler": "^0.31.0",
     "react-refresh": "^0.16.0",
     "react-router": "^6.16.0",
-    "react-router-dom": "^6.16.0",
+    "react-router-dom": "^6.30.1",
     "react-use-measure": "^2.1.7",
     "regenerator-runtime": "^0.14.1",
     "require-from-string": "^2.0.2",
@@ -104,8 +103,10 @@
     "zustand": "^5.0.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
+ },
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cederlinkofficial1/CEDERLINK.git"
@@ -117,5 +118,8 @@
     "url": "https://github.com/cederlinkofficial1/CEDERLINK/issues"
   },
   "homepage": "https://github.com/cederlinkofficial1/CEDERLINK#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "parcel": "^2.16.0"
+  }
 }
