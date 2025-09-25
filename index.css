@@ -12,6 +12,49 @@ body, html {
     scroll-behavior: smooth; /* Add smooth scrolling */
 }
 
+/* Black scrollbar styling */
+/* For Webkit browsers (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Black track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333; /* Dark gray thumb for minimal contrast */
+  border-radius: 0; /* Square edges */
+  border: 2px solid #000000; /* Border same as track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #444444; /* Slightly lighter on hover */
+}
+
+::-webkit-scrollbar-corner {
+  background: #000000; /* Corner color */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #000000; /* thumb track */
+}
+
+/* Ensure it works in both light and dark modes */
+body, 
+body.dark-theme {
+  scrollbar-color: #333333 #000000;
+}
+
+/* Special styling for dark mode if needed */
+body.dark-theme ::-webkit-scrollbar-thumb {
+  background: #333333;
+  border: 2px solid #000000;
+}
+
 .background-container {
     top: 0;
     left: 0;
