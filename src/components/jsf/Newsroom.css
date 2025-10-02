@@ -6,39 +6,61 @@
     flex-direction: column;
 }
 
-.newsroom-image {
-    height: 50vh; /* Exactly half the viewport height */
-    overflow: hidden;
+/* Replace the newsroom-image section with this */
+.newsroom-buttons-container {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px; /* Space between buttons */
+    background-color: #ffffff; /* Light background */
+}
+
+.newsroom-button {
     position: relative;
-}
-
-.newsroom-image img {
+    margin-top: 45px;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
+    height: 410px;
+    background-color: #3498db; /* Blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
-/* Overlay for the sections */
+.newsroom-button.dark-theme {
+    background-color: #1e3a5f; /* Darker blue for dark theme */
+}
+
+
+.newsroom-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Overlay for the sections - update to cover full width */
 .image-sections {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex; /* Changed from grid to flex */
-    flex-direction: row; /* Ensure horizontal layout */
+    width: 100%; /* Full width of the parent */
+    height: 100%; /* Full height of the parent */
+    display: flex;
+    flex-direction: row;
     z-index: 2;
 }
 
-/* Section styling */
+/* Section styling - make borders more visible */
 .section {
-    flex: 1; /* Make each section take equal width */
-    height: 100%; /* Ensure full height */
+    position: relative;
+    flex: 1; /* Each section takes equal width */
+    height: 100%;
+    width: 1%;
     border-right: 3px solid rgb(255, 255, 255);
 }
 
@@ -62,12 +84,13 @@
     right: 50px; /* Gap from the right */
     height: 3px; /* Line thickness */
     background-color: rgb(0, 0, 0); /* White line */
-    border-radius: 1.5px; /* Slightly rounded edges */
 }
 
 /* Add these styles to position text below the horizontal line */
 .newsroom-text-container {
     position: relative;
+    display: inline-block; /* Allow hovering on the text container */
+    cursor: pointer;       /* Indicate it's interactive */
     top: 240px; /* Position below the line at 220px + spacing */
     padding: 0 50px; /* Match the horizontal line's spacing */
 }
@@ -77,43 +100,81 @@
     font-size: 5.5rem;
     font-weight: 400;
     margin-bottom: 5px;
-    margin-top: 35px;
+    margin-top: -16px;
     color: #000000;
     text-align: middle;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between text and arrow */
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
 }
 
 
-/* Adjust for mobile */
+.newsroom-arrow {
+    height: 4rem; /* Adjust size relative to your text */
+    width: auto;
+    margin-left: 3px;
+}
+
+/* Update these styles for the X icon */
+.section-icon {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    padding: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.x-icon {
+    bottom: 18px;
+    right: 18px;
+}
+
+.linkedin-icon {
+    bottom: 18px;
+    right: 18px;
+}
+
+.threads-icon{
+    bottom: 18px;
+    right: 18px;
+}
+
+.medium-icon{
+    bottom: 18px;
+    right: 18px;
+}
+
+/* The image inside the icon container should fill it */
+.section-icon img {
+    width: 60px; /* Make the X symbol inside smaller than the container */
+    height: 60px;
+}
+
+/* Also update mobile styles to be proportional */
 @media (max-width: 768px) {
-    .newsroom-image {
-        height: 40vh; /* Slightly smaller on mobile */
+    .newsroom-buttons-container {
+        flex-direction: column;
     }
     
-    .newsroom-content {
-        height: 60vh;
-    }
-
-    .newsroom-content::before {
-        left: 20px;
-        right: 20px;
-    }
-
-    .newsroom-text-container {
-        padding: 0 20px; /* Match the horizontal line's spacing on mobile */
-    }
-    
-    .newsroom-title {
-        font-size: 2rem;
-    }
-    
-    .newsroom-description {
-        font-size: 1rem;
+    .newsroom-button {
+        width: 100%;
+        height: 120px;
     }
 }
 
 /* Add dark theme styling */
 .newsroom.dark-theme {
-    background-color: #121212;
+    background-color: #242424;
 }
 
 .newsroom.dark-theme .newsroom-content::before {
@@ -126,4 +187,53 @@
 
 .newsroom.dark-theme .section {
     border-right: 3px solid #242424; /* Adjust border opacity for dark theme */
+}
+
+.newsroom.dark-theme .newsroom-arrow {
+    filter: brightness(1); /* Keep arrow visible in dark theme */
+}
+
+.newsroom.dark-theme .section-icon {
+    background-color: #333333; /* Darker background for icons in dark theme */
+}
+
+.newsroom.dark-theme .newsroom-buttons-container {
+    background-color: #242424; /* Black background for dark theme */
+}
+
+/* Update the know-more-text styling */
+.know-more-text {
+    position: absolute;
+    top: -60px;
+    right: -748px;
+    font-family: 'Instrument Sans';
+    font-size: 1rem;
+    font-weight: 500;
+    color: #242424;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 5; /* Ensure it's above other elements */
+}
+
+/* Make the newsroom-title a hover trigger */
+.newsroom-title {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Simpler hover logic - directly connect title and know-more */
+.newsroom-title:hover + .know-more-text {
+    opacity: 1;
+}
+
+/* Ensure proper positioning of the content container */
+.newsroom-content {
+    position: relative;  /* For absolute positioning of child elements */
+    /* Keep existing styles */
+}
+
+/* Dark theme styling */
+.newsroom.dark-theme .know-more-text {
+    color: #ffffff; /* Change from #aaa to white */
 }

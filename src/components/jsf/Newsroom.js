@@ -1,6 +1,10 @@
 import React from "react";
 import "./Newsroom.css";
 import { useOutletContext } from "react-router-dom";
+import NewsroomButton1 from "./NewsroomButton1";
+import NewsroomButton2 from "./NewsroomButton2";
+import NewsroomButton3 from "./NewsroomButton3";
+import NewsroomButton4 from "./NewsroomButton4";
 
 const Newsroom = () => {
     // Get theme state from outlet context
@@ -8,27 +12,28 @@ const Newsroom = () => {
     
     return(
         <div className={`newsroom ${isDarkTheme ? 'dark-theme' : ''}`}>
-            <div className="newsroom-image">
-                <img 
-                    src={isDarkTheme 
-                        ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NewsroomUpperDarkTheme.jpg" 
-                        : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NewsroomUpperBlueTheme.jpg"
-                    } 
-                    alt="Newsroom banner" 
-                />
-                <div className="image-sections">
-                    <div className="section"></div>
-                    <div className="section"></div>
-                    <div className="section"></div>
-                    <div className="section"></div>
-                </div>
+            <div className="newsroom-buttons-container">
+                <NewsroomButton1 isDarkTheme={isDarkTheme} />
+                <NewsroomButton2 isDarkTheme={isDarkTheme} />
+                <NewsroomButton3 isDarkTheme={isDarkTheme} />
+                <NewsroomButton4 isDarkTheme={isDarkTheme} />
             </div>
+            
             <div className="newsroom-content">
-                {/* The horizontal line is added via CSS ::before */}
-                
-                {/* Text below the horizontal line */}
                 <div className="newsroom-text-container">
-                    <h2 className="newsroom-title">NEWSROOM</h2>
+                    {/* Move know-more-text next to the title for proper hover targeting */}
+                    <h2 className="newsroom-title">
+                        NEWSROOM
+                        <img 
+                            src={isDarkTheme 
+                                ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.png"
+                                : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_Arrow.png"
+                            }
+                            alt="Arrow"
+                            className="newsroom-arrow"
+                        />
+                    </h2>
+                    <div className="know-more-text">Read our Articles</div>
                 </div>
             </div>
         </div>
