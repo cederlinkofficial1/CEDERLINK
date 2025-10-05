@@ -1,0 +1,30 @@
+.shadow-image-container {
+    position: absolute;
+    right: 80%; /* Push it partially off-screen */
+    top: 46.4%;
+    transform: translateY(-50%);
+    height: 113vh;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.shadow-img {
+    height: 100%;
+    width: auto;
+    opacity: 1;
+}
+
+@media (max-width: 1200px) {
+    .shadow-image-container {
+        right: 10%;
+        height: 70vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .shadow-image-container {
+        right: -60%;
+        height: 50vh;
+    }
+}

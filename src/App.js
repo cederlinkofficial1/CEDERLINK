@@ -3,7 +3,7 @@ import ReactDom from "react-dom/client";
 import Body from "./components/jsf/Body";
 import Home from "./components/jsf/Home";
 import About from "./components/jsf/About";
-import Newsroom from "./components/jsf/Newsroom";
+import NewsroomPage from "./components/jsf/NewsroomPage";
 import Projects from "./components/jsf/Projects";
 import Contact from "./components/jsf/Contact";
 import Error from "./Error";
@@ -49,7 +49,7 @@ const appRouter = createBrowserRouter([
             },
             {
                 path : "/newsroom",
-                element : <Newsroom />,
+                element : <NewsroomPage />,
             },
             {
                 path : "/projects",

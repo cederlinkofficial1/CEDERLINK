@@ -1,6 +1,6 @@
 import React from "react";
 import "./Newsroom.css";
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import NewsroomButton1 from "./NewsroomButton1";
 import NewsroomButton2 from "./NewsroomButton2";
 import NewsroomButton3 from "./NewsroomButton3";
@@ -20,20 +20,23 @@ const Newsroom = () => {
             </div>
             
             <div className="newsroom-content">
+                
+                {/* Make title clickable by wrapping it in Link */}
                 <div className="newsroom-text-container">
-                    {/* Move know-more-text next to the title for proper hover targeting */}
-                    <h2 className="newsroom-title">
-                        NEWSROOM
-                        <img 
-                            src={isDarkTheme 
-                                ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.png"
-                                : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_Arrow.png"
-                            }
-                            alt="Arrow"
-                            className="newsroom-arrow"
-                        />
-                    </h2>
-                    <div className="know-more-text">Read our Articles</div>
+                    <Link to="/newsroom" className="newsroom-title-link">
+                        <h2 className="newsroom-title">
+                            NEWSROOM
+                            <img 
+                                src={isDarkTheme 
+                                    ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.png"
+                                    : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_Arrow.png"
+                                }
+                                alt="Arrow"
+                                className="newsroom-arrow"
+                            />
+                        </h2>
+                        <div className="know-more-text">Read our Articles</div>
+                    </Link>
                 </div>
             </div>
         </div>

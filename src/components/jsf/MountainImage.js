@@ -11,8 +11,8 @@ const MountainImage = ({ isDarkTheme }) => {
       ) : (
         <img
           src={isDarkTheme 
-            ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/BlackFractalMount.png"
-            : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/BlueFractalMount.png"
+            ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/svgDarkThemeMountain.svg"
+            : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/svgLightThemeMountain.svg"
           }
           alt={isDarkTheme ? "Black mountain fractal" : "Blue mountain fractal"}
           onError={() => setImageError(true)}

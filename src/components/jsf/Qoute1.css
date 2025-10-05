@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 0px 0px;
-    padding-top: 60px; /* Changed from 60px to 0px to remove top space */
+    padding-top: 0px; /* Changed from 60px to 0px to remove top space */
     max-width: 5000px;
     margin: 0 auto;
     background-color: white;
@@ -22,6 +22,7 @@
     align-items: center;
     gap: 30px;
     width: 100%;
+    height: 200px;
 }
 
 .quote-text-section {
@@ -69,12 +70,12 @@
     line-height: 122%;
     letter-spacing: 0;
     vertical-align: middle;
-    margin: 20px;
+    margin-top: 20px;
     
     /* Layout settings */
     width: 1100px; /* Increased from 900px to 1000px */
     height: 80px;
-    top: -50px;
+    top: -25px;
     left: 19px;
     position: relative;
     

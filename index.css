@@ -405,15 +405,212 @@ body.dark-theme .quote-text {
 
 .projects{
     height: 100vh;
-    background-color: rgb(0, 0, 0);
+    background-color: #035ca5;
+    position: relative;
+    overflow: hidden; /* Prevent zero from causing horizontal scrolling */
 }
 
-.about{
-    height: 100vh;
-    background-color: #8bb2d6;
+body.dark-theme .projects {
+    background-color: #242424 !important; /* Added !important to override any other styles */
+}
+
+/* Center the content */
+.projects-content {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the tagline */
+.vision-tagline {
+    text-align: center;
+    font-family: 'Instrument Sans', sans-serif;
+    padding: 0 2rem;
+    font-weight: 400;
+    font-size: 100px;
+    color: #242424;
+    z-index: 2;
+}
+
+body.dark-theme .vision-tagline {
+    color: #ffffff;
+}
+
+/* Add this to your index.css file */
+.projects-bottom-line {
+    position: absolute;
+    bottom: 137px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #242424;
+}
+
+/* Dark theme support */
+body.dark-theme .projects-bottom-line {
+    background-color: #ffffff;
+}
+
+/* Add these styles to your index.css file */
+
+/* Container for vision tagline and zero image */
+.vision-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Adjust the vision tagline to share space with the image */
+.vision-tagline {
+    text-align: center;
+    font-family: 'Instrument Sans', sans-serif;
+    padding: 3rem 2rem;
+    font-weight: 400;
+    font-size: 80px;
+    color: #242424;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 70%; /* Allow space for the image */
+}
+
+/* Style the zero image */
+.zero-image {
+    position: absolute;
+    right: -20%; /* Push it off the screen for partial visibility */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100vh; /* Make it larger */
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+.zero-image img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9; /* Slightly transparent to match image */
+}
+
+/* Dark theme support */
+body.dark-theme .zero-image img {
+    filter: brightness(0.8) invert(1);
+}
+
+/* Texture at the top of Projects section */
+.projects-texture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Texture_svgNew.svg');
+    background-repeat: repeat-x;
+    background-size: contain;
+    z-index: 0;
+    overflow: hidden; /* ensures overlay stays inside */
+}
+
+/* Overlay layer inside the texture */
+.projects-texture::after {
+    content: "";
+    position: absolute;
+    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+    background: rgba(203, 229, 255, 0.88); /* black overlay with 40% opacity */
+    z-index: 5; /* sits above the texture */
+    pointer-events: none; /* prevents it from blocking clicks */
+}
+
+/* Add this new rule to ensure the texture's overlay doesn't hide the background color */
+.projects-texture::after {
+    background: rgba(203, 229, 255, 0.88); /* Light theme overlay */
+}
+
+/* Add this to change the overlay in dark theme */
+body.dark-theme .projects-texture::after {
+    background: rgba(36, 36, 36, 0.88); /* Dark theme overlay - more transparent */
+}
+
+/* Content section */
+.projects-content {
+    padding-top: 120px; /* Match the height of texture */
+    position: relative;
+    z-index: 2; /* make sure content appears above texture + overlay */
 }
 
 
+/* Projects footer section with "WE BELIEVE" text and arrow */
+.projects-footer {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.projects-believe-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 5.5rem;
+    font-weight: 300;
+    margin-bottom: 5px;
+    margin-right: 760px;
+    gap: 5px; /* Space between text and arrow */
+    color: #242424;
+    z-index: 10;
+}
+
+.projects.dark-theme .projects-believe-title {
+    color: #ffffff;
+}
+
+.projects-arrow {
+    height: 4.0rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+@media (max-width: 1200px) {
+    .zero-image {
+        right: -40%;
+        height: 60vh;
+    }
+    
+    .vision-tagline {
+        font-size: 60px;
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .zero-image {
+        right: -60%;
+        height: 40vh;
+    }
+    
+    .vision-tagline {
+        font-size: 40px;
+    }
+    
+    .projects-believe-title {
+        font-size: 1.8rem;
+    }
+    
+    .projects-arrow {
+        height: 1.5rem;
+    }
+}
 
 
 
