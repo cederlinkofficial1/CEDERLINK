@@ -589,6 +589,7 @@ body.dark-theme .projects-texture::after {
     }
     
 
+    
     .vision-tagline {
         font-size: 60px;
         max-width: 80%;
@@ -600,7 +601,7 @@ body.dark-theme .projects-texture::after {
         right: -60%;
         height: 40vh;
     }
-    
+
     
     .vision-tagline {
         font-size: 40px;
