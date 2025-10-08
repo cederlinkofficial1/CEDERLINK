@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+.about {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.first-rectangle {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  padding-right: 244px;
+  width: 600px;
+  height: 450px;
+  z-index: 1;
+}
+
+.second-rectangle {
+  position: absolute;
+  top: 90px; /* Same top position as the first rectangle for alignment */
+  left: 160px; /* Position it right after the first rectangle */
+  width: 600px;
+  height: 450px;
+  z-index: 1;
+}
+
+/* Straight line styling */
+.about-line {
+  position: absolute;
+  top: 80%;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1;
+}
+
+.about-line.light {
+  background-color: #000000;
+}
+
+.about-line.dark {
+  background-color: #ffffff;
+}
+
+/* About Us title styling */
+.about-us-title {
+  position: absolute;
+  top: 85%;
+  left: 17%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+.about-us-text {
+  font-size: 4.5rem;
+  font-family: Instrument Sans, sans-serif;
+  margin-right: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.about-us-text.light {
+  color: #000000;
+}
+
+.about-us-text.dark {
+  color: #ffffff;
+}
+
+.about-us-arrow {
+  height: 52px;
+  margin-left: 10px;
+}
+

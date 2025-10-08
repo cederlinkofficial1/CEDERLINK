@@ -90,7 +90,6 @@
 .newsroom-text-container {
     position: relative;
     display: inline-block; /* Allow hovering on the text container */
-    cursor: pointer;       /* Indicate it's interactive */
     top: 240px; /* Position below the line at 220px + spacing */
     padding: 0 50px; /* Match the horizontal line's spacing */
 }
@@ -107,7 +106,6 @@
     align-items: center;
     gap: 15px; /* Space between text and arrow */
     position: relative;
-    cursor: pointer;
     display: inline-block;
 }
 
@@ -218,7 +216,6 @@
 /* Make the newsroom-title a hover trigger */
 .newsroom-title {
     position: relative;
-    cursor: pointer;
     display: inline-block;
 }
 

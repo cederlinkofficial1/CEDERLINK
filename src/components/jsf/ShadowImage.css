@@ -1,7 +1,7 @@
 .shadow-image-container {
     position: absolute;
-    right: 80%; /* Push it partially off-screen */
-    top: 46.4%;
+    right: 81%; /* Push it partially off-screen */
+    top: 45.7%;
     transform: translateY(-50%);
     height: 113vh;
     display: flex;

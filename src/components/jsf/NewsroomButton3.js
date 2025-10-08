@@ -9,8 +9,8 @@ const NewsroomButton3 = ({ isDarkTheme }) => {
       className={`newsroom-button ${isDarkTheme ? 'dark-theme' : ''}`}
       style={{
         backgroundImage: isDarkTheme 
-          ? `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/DarkMode_3.png')`
-          : `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/LightMode_3.png')`,
+          ? `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/DarkMode_3.svg')`
+          : `url('https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/LightMode_3.svg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center'
       }}
@@ -22,8 +22,8 @@ const NewsroomButton3 = ({ isDarkTheme }) => {
         {isHovered ? (
           <img 
             src={isDarkTheme
-              ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.png"
-              : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Arrow_NewsroomButton_LightTheme.png"
+              ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.svg"
+              : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_Arrow_LightTheme.svg"
             }
             alt="Arrow"
             className="hover-arrow"
@@ -31,8 +31,8 @@ const NewsroomButton3 = ({ isDarkTheme }) => {
         ) : (
           <img 
             src={isDarkTheme
-              ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Thread_Symbol_DarkTheme.png"
-              : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Thread_Symbol_LighTheme.png"
+              ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Thread_Symbol_DarkTheme.svg"
+              : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Thread_Symbol_LighTheme.svg"
             }
             alt="X logo"
           />

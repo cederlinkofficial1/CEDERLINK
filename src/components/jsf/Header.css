@@ -1,0 +1,142 @@
+/* header {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(5px);
+  height: 120px;
+} */
+
+.dark-theme header {
+  background-color: rgba(26, 26, 26,0);
+}
+
+/* Logo styles */
+.logo {
+  flex: 0 0 auto; /* Prevent logo from shrinking or growing */
+  max-width: 170px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 100%;
+  height: 70px;
+  padding-bottom: 13px;
+}
+
+/* Navigation styles - adjust to leave space for the theme toggle */
+nav {
+  flex: 0 1 auto; /* Change from 1 1 auto to 0 1 auto to not take all available space */
+  margin-right: 1rem; /* Add some space between nav and theme toggle */
+  display: flex;
+  justify-content: flex-end; /* Align items to the right side */
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.dark-theme .nav-item {
+  color: #000000;
+}
+
+.nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-theme .nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav-item.active {
+  font-weight: 600;
+}
+
+.nav-item.contact {
+  color: white;
+}
+
+
+/* Theme toggle button - restored to original position */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 0; 
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Modify the header layout to accommodate the original button position */
+header {
+  display: flex;
+  justify-content: space-between; /* This ensures proper spacing */
+  align-items: center;
+  padding: 1rem 2rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 140, 227, 0);
+  height: 120px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  .logo {
+    margin-bottom: 1rem;
+  }
+  
+  nav {
+    flex-basis: 100%;
+    margin-left: 0;
+    justify-content: center;
+  }
+  
+  .nav-items {
+    gap: 0.75rem;
+  }
+  
+  .nav-item {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
+  }
+  
+  .theme-toggle {
+    position: static; 
+    margin-left: auto; 
+  }
+}

@@ -9,7 +9,8 @@ const HeroSection = ({ isDarkTheme }) => {
   };
 
   return (
-    <div className="hero-section" style={heroStyle}>   
+
+    <div className="hero-section"style={heroStyle}>   
       <div className="hero-content">
         <h1 className="hero-tagline">
           Enterprise built on 

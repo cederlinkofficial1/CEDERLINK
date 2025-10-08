@@ -56,11 +56,6 @@ section {
 }
 
 /* Quote sections */
-.quote-section {
-  padding: 50px 0;
-  position: relative;
-  z-index: 2;
-}
 
 /* Theme toggle button */
 .theme-toggle {
@@ -69,21 +64,59 @@ section {
     right: 20px;
     width: 30px;
     height: 30px;
-    border-radius: 50%;
+    border-radius: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
     border: none;
-    cursor: pointer;
     z-index: 1000;
     padding: 0;
-    background-color: transparent; /* Remove background color */
-    box-shadow: none; /* Remove shadow */
+    box-shadow: none; 
 }
 
-.theme-toggle-icon-light, 
-.theme-toggle-icon-dark {
-    width: 30px;  /* Match the button size */
-    height: 30px; /* Match the button size */
-    object-fit: contain;
+.theme-toggle-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background:fixed; /* Make background transparent */
+    border: none;
+    cursor: pointer;
+    padding: 0; /* Remove padding */
+    z-index: 9999; /* Increase z-index to very high */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
 }
+
+/* Ensure images are clearly visible */
+.theme-toggle-fixed img {
+    width: 40px; /* Make image bigger */
+    height: 40px;
+    opacity: 3; /* Ensure full opacity */
+}
+
+/* Debug style to test if the button is actually rendered */
+.theme-toggle-fixed::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 0, 0, 0.2); /* Red background for debugging */
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Add these rules to Body.css */
+body header {
+    transition: background-color 0.3s ease;
+}
+
+/* Make sure logo and nav items have proper z-index to be visible on transparent background */
+.logo, .nav-items, .theme-toggle {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Adjust any existing background-color properties in Body.css */

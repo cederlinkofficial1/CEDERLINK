@@ -10,6 +10,7 @@ const Projects = () => {
     const [isDarkTheme] = useOutletContext();
     
     return(
+            
         <div className={`projects ${isDarkTheme ? 'dark-theme' : ''}`} style={{position: 'relative'}}>
             <ShadowImage />
             
@@ -42,12 +43,12 @@ const Projects = () => {
                     WE BELIEVE
                     <img 
                         src={isDarkTheme 
-                            ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Arrow_NewsroomButton_DarTheme.png"
-                            : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/Arrow_NewsroomButton_LightTheme.png"
+                            ? "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_ArrowDarkTheme.svg"
+                            : "https://raw.githubusercontent.com/cederlinkofficial1/CEDERLINK/main/src/components/images/NEWSROOM_Arrow_LightTheme.svg"
                         }
                         alt="Arrow"
                         className="projects-arrow"
-                    />
+                        />
                 </h2>
             </div>
         </div>

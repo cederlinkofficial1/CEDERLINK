@@ -555,6 +555,7 @@ body.dark-theme .projects-texture::after {
     text-align: center;
     padding: 0 20px;
     margin-top: 20px;
+    z-index: 999;
 }
 
 .projects-believe-title {
@@ -568,7 +569,7 @@ body.dark-theme .projects-texture::after {
     margin-right: 760px;
     gap: 5px; /* Space between text and arrow */
     color: #242424;
-    z-index: 10;
+    z-index: 100;
 }
 
 .projects.dark-theme .projects-believe-title {
@@ -611,6 +612,3 @@ body.dark-theme .projects-texture::after {
         height: 1.5rem;
     }
 }
-
-
-

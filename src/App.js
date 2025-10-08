@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ReactDom from "react-dom/client";
-import Body from "./components/jsf/Body";
+import ReactDOM from "react-dom/client"; // Fixed capitalization
+import Header from "./components/jsf/Header";
 import Home from "./components/jsf/Home";
 import About from "./components/jsf/About";
 import NewsroomPage from "./components/jsf/NewsroomPage";
@@ -8,12 +8,11 @@ import Projects from "./components/jsf/Projects";
 import Contact from "./components/jsf/Contact";
 import Error from "./Error";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import "./components/jsf/Body.css"; // Import your styles if needed
 
 const AppLayout = () => {
-    // Move theme state up to AppLayout
     const [isDarkTheme, setIsDarkTheme] = useState(false);
     
-    // Create toggle function here
     const toggleTheme = () => {
         setIsDarkTheme(prevTheme => {
             const newTheme = !prevTheme;
@@ -27,9 +26,14 @@ const AppLayout = () => {
     };
 
     return(
-        <div className="app">
-            <Body isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
-            <Outlet context={[isDarkTheme, toggleTheme]} />
+        <div className={`app ${isDarkTheme ? 'dark-theme' : ''}`}>
+            {/* Header with navigation */}
+            <Header isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} />
+            
+            {/* Main content area */}
+            <main className="main-content">
+                <Outlet context={[isDarkTheme, toggleTheme]} />
+            </main>
         </div>
     );
 };
@@ -41,7 +45,7 @@ const appRouter = createBrowserRouter([
         children : [
             {
                 path : "/",
-                element : <Home />,  // Remove props here
+                element : <Home />,
             },
             {
                 path : "/about",
@@ -64,5 +68,5 @@ const appRouter = createBrowserRouter([
     },
 ]);
 
-const root1 = ReactDom.createRoot(document.getElementById("root"));
-root1.render(<RouterProvider router = {appRouter} />);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<RouterProvider router={appRouter} />);
