@@ -45,6 +45,7 @@ const About = () => {
                     className="about-us-arrow"
                 />
             </div>
+            
         </div>
     );
 };
